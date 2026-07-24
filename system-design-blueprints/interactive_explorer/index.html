@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive System Design Architecture Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="logo-dot"></span>
+                <h2>Blueprint Explorer</h2>
+            </div>
+            
+            <div class="sidebar-scroll">
+                <!-- Documentation -->
+                <div class="nav-group">
+                    <h3>Documentation</h3>
+                    <nav class="system-list">
+                        <a class="nav-item" href="viewer.html?file=README.md" style="text-decoration: none;">
+                            <span class="nav-icon">📖</span>
+                            <span class="nav-label">Main README Wiki</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Level 1 -->
+                <div class="nav-group">
+                    <h3>Level 1 – Core Design</h3>
+                    <nav class="system-list">
+                        <button class="nav-item" data-system="url_shortener">
+                            <span class="nav-icon">🔗</span>
+                            <span class="nav-label">URL Shortener</span>
+                        </button>
+                        <button class="nav-item" data-system="pastebin">
+                            <span class="nav-icon">📋</span>
+                            <span class="nav-label">Pastebin</span>
+                        </button>
+                        <button class="nav-item" data-system="file_storage">
+                            <span class="nav-icon">🗄️</span>
+                            <span class="nav-label">File Storage</span>
+                        </button>
+                        <button class="nav-item" data-system="dropbox">
+                            <span class="nav-icon">📂</span>
+                            <span class="nav-label">Dropbox Sync</span>
+                        </button>
+                        <button class="nav-item" data-system="parking_lot">
+                            <span class="nav-icon">🅿️</span>
+                            <span class="nav-label">Parking Lot</span>
+                        </button>
+                        <button class="nav-item" data-system="library_management">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-label">Library Management</span>
+                        </button>
+                        <button class="nav-item" data-system="atm_system">
+                            <span class="nav-icon">🏧</span>
+                            <span class="nav-label">ATM System</span>
+                        </button>
+                        <button class="nav-item" data-system="elevator_system">
+                            <span class="nav-icon">🛗</span>
+                            <span class="nav-label">Elevator System</span>
+                        </button>
+                        <button class="nav-item" data-system="hotel_booking">
+                            <span class="nav-icon">🏨</span>
+                            <span class="nav-label">Hotel Booking</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="nav-group">
+                    <h3>Level 4 – Delivery</h3>
+                    <nav class="system-list">
+                        <button class="nav-item" data-system="food_delivery">
+                            <span class="nav-icon">🍔</span>
+                            <span class="nav-label">Food Delivery</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Level 7 -->
+                <div class="nav-group">
+                    <h3>Level 7 – AI Systems</h3>
+                    <nav class="system-list">
+                        <button class="nav-item" data-system="rag_pipeline">
+                            <span class="nav-icon">🧠</span>
+                            <span class="nav-label">RAG Pipeline</span>
+                        </button>
+                        <button class="nav-item" data-system="vector_database">
+                            <span class="nav-icon">💾</span>
+                            <span class="nav-label">Vector Database</span>
+                        </button>
+                        <button class="nav-item" data-system="chat_gpt">
+                            <span class="nav-icon">🤖</span>
+                            <span class="nav-label">ChatGPT Core</span>
+                        </button>
+                        <button class="nav-item" data-system="ai_agent_framework">
+                            <span class="nav-icon">🤖</span>
+                            <span class="nav-label">AI Agent Loop</span>
+                        </button>
+                        <button class="nav-item active" data-system="llm_gateway">
+                            <span class="nav-icon">🌐</span>
+                            <span class="nav-label">LLM Gateway</span>
+                        </button>
+                        <button class="nav-item" data-system="semantic_search">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-label">Semantic Search</span>
+                        </button>
+                        <button class="nav-item" data-system="token_streaming">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-label">Token Streaming</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Level 8 -->
+                <div class="nav-group">
+                    <h3>Level 8 – Distributed</h3>
+                    <nav class="system-list">
+                        <button class="nav-item" data-system="api_gateway">
+                            <span class="nav-icon">🚪</span>
+                            <span class="nav-label">API Gateway</span>
+                        </button>
+                        <button class="nav-item" data-system="distributed_cache">
+                            <span class="nav-icon">⚡</span>
+                            <span class="nav-label">Distributed Cache</span>
+                        </button>
+                        <button class="nav-item" data-system="distributed_lock">
+                            <span class="nav-icon">🔒</span>
+                            <span class="nav-label">Distributed Lock</span>
+                        </button>
+                        <button class="nav-item" data-system="distributed_queue">
+                            <span class="nav-icon">📥</span>
+                            <span class="nav-label">Distributed Queue</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="sidebar-footer" style="display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 16px;">
+                <a href="https://www.buymeachai.in/toudaysinghkushwah" target="_blank" class="btn secondary-btn" style="background: rgba(245, 124, 0, 0.1); border: 1px solid rgba(245, 124, 0, 0.3); color: #ff9800; display: flex; justify-content: center; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; padding: 12px; border-radius: 6px; font-size: 0.85rem; transition: all 0.2s ease;">
+                    <span>☕ Buy Me a Chai</span>
+                </a>
+                <button id="simulate-btn" class="btn primary-btn" style="width: 100%;">Simulate Query Flow</button>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <header class="workspace-header">
+                <div class="title-area">
+                    <h1 id="system-title">LLM Gateway Pipeline</h1>
+                    <p id="system-description" class="subtitle">High-throughput proxy layer routing, auditing, and rate-limiting upstream LLM model transactions.</p>
+                </div>
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">Simulating Active Traffic</span>
+                </div>
+            </header>
+
+            <div class="workspace-grid">
+                <!-- Architecture Diagram Stage -->
+                <section class="diagram-card glass-panel">
+                    <div class="card-header">
+                        <h3>Interactive AWS Architecture Flow</h3>
+                        <span class="hint-text">Click on any node to view configuration & payload logs</span>
+                    </div>
+                    <div class="canvas-container" id="canvas-container">
+                        <!-- SVGs are dynamically loaded here -->
+                    </div>
+                </section>
+
+                <!-- Inspector Panel (Side) -->
+                <section class="inspector-card glass-panel" id="inspector">
+                    <div class="card-header border-bottom">
+                        <div class="node-meta">
+                            <span class="node-category" id="ins-category">Networking</span>
+                            <h3 id="ins-title">AWS Application Load Balancer</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="inspector-body">
+                        <div class="info-section">
+                            <h4>Service Overview</h4>
+                            <p id="ins-description">Accepts incoming HTTP/2 client connections, authenticates requests against custom rules, and load balances across ECS container groups.</p>
+                        </div>
+
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="system">System Overview</button>
+                            <button class="tab-btn" data-tab="payload">Node Payload</button>
+                            <button class="tab-btn" data-tab="config">Node Config</button>
+                        </div>
+
+                        <div class="tab-content" id="tab-system">
+                            <div class="system-details-wrapper">
+                                <div class="info-section">
+                                    <h4 class="section-title">Core Tech Stack (AWS Mappings)</h4>
+                                    <div id="system-tech-stack" class="tech-stack-list">
+                                        <!-- Dynamic Tech Stack List -->
+                                    </div>
+                                </div>
+                                <div class="info-section doc-section">
+                                    <a id="system-doc-link" href="#" target="_blank" class="btn secondary-btn doc-link">View Full Markdown Blueprint ↗</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content hidden" id="tab-payload">
+                            <div class="code-wrapper">
+                                <pre><code id="ins-payload" class="language-json">{
+  "status": "ready"
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-content hidden" id="tab-config">
+                            <div class="code-wrapper">
+                                <pre><code id="ins-config" class="language-terraform"># Resource Configuration</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
